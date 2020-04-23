@@ -1,5 +1,5 @@
 import os
-name_of_file = 'C:\\Users\\daria\\progy2\\fifth__task\\data.txt'
+name_of_file = 'data.txt'
 
 
 def Sequence(filename):
