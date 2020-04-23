@@ -22,15 +22,11 @@ def Sequence(filename):
             return ArithmeticError
         f.close()
         f=open(filename, "r")
-        string = f.read()
-        temp = ''
-        for index in range(len(string)):
-            if (string[index] != ' ') and (string[index] != '\n'):
-                temp += string[index]
-            if (string[index] == ' ') or (string[index] == '\n') or (index == (len(string) - 1)):
-                current_int = int(temp)
-                Z = Z +((current_int-res)**2)
-                temp = ''
+        for s in [s5 for s1 in f for s2 in s1.split(' ') for s3 in s2.split('\n') for s4 in s3.split(',') for s5 in s4.split('\t') if s5!='']: 
+            try:
+                Z = Z +((int(s)-res)**2)
+            except:
+                print('word ',s,' ignored',sep='')
         ans = Z/n
         f.close()
         return ans
